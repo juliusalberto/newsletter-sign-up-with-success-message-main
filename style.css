@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --dark-navy: #242742;
+  --pale-navy: #36384D;
+  --grey-25: #19182B40;
+  --vermellion: #FF6155;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.alert {
+  color: var(--vermellion);
+}
+
+input.alert {
+  background: rgba(255, 97, 85, 0.15);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.blue-btn {
+  min-height: 56px;
+  border-radius: 8px;
+  background: var(--dark-navy);
+  font-weight: 700;
+  color: white;
+  border: none;
+}
+.blue-btn:hover {
+  background: linear-gradient(204deg, #FF6A3A 0%, #FF527B 100%);
+  box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.5);
+}
+
+.card_container img {
+  width: 100%;
+  height: auto;
+}
+.card_container .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 24px;
+  padding: 40px 24px;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--dark-navy);
+}
+.card_container .text-container h1 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+}
+.card_container .text-container .custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+.card_container .text-container .custom-list li {
+  position: relative;
+  padding-left: 30px; /* Make room for the icon */
+  margin-bottom: 10px; /* Space between items */
+}
+.card_container .text-container .custom-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 21px;
+  height: 21px;
+  background-image: url("assets/images/icon-success.svg");
+  background-size: contain;
+}
+.card_container .text-container .email_input {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 8px;
+  margin-top: 16px;
+}
+.card_container .text-container .email_input .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.card_container .text-container .email_input label, .card_container .text-container .email_input .container {
+  font-size: 12px;
+  font-weight: 700;
+}
+.card_container .text-container .email_input input {
+  font-size: 16px;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 1px solid var(--grey-25);
+}
+.card_container .text-container .email_input input::-moz-placeholder {
+  opacity: 0.5;
+}
+.card_container .text-container .email_input input::placeholder {
+  opacity: 0.5;
+}
+
+#success-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  padding: 40px 24px;
+  min-height: 100vh;
+}
+#success-message h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 100%;
+}
+#success-message .icon {
+  margin-bottom: 42px;
+}
+#success-message .blue-btn {
+  margin-top: auto;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background: var(--pale-navy);
+    display: grid;
+    place-content: center;
+    height: 100vh;
+  }
+  .card_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 64px;
+    flex-direction: row-reverse;
+    background-color: white;
+    max-height: 641px;
+    max-width: 928px;
+    border-radius: 36px;
+    padding: 24px;
+  }
+  .card_container .text-container {
+    flex: 1;
+    justify-content: center;
+  }
+  .card_container .text-container h1 {
+    font-size: 56px;
+  }
+  .card_container picture {
+    flex: 1;
+  }
+  .card_container picture img {
+    height: 100%;
+  }
+  #success-message {
+    background-color: white;
+    max-height: 520px;
+    min-height: 0vh;
+    max-width: 504px;
+    padding: 64px;
+    border-radius: 36px;
+  }
+  #success-message .icon {
+    margin-bottom: 40px;
+  }
+  #success-message h1 {
+    margin-bottom: 24px;
+  }
+  #success-message p {
+    margin-bottom: 40px;
+  }
+}/*# sourceMappingURL=style.css.map */

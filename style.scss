@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --dark-navy: #242742;
+    --pale-navy: #36384D;
+    --grey-25: #19182B40;
+    --vermellion: #FF6155;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin font-style($family, $size, $weight, $line-height: normal) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height;
+}
+
+@mixin flexbox($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.alert {
+    color: var(--vermellion);
+}
+
+input.alert {
+    background: rgba(255, 97, 85, 0.15);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.blue-btn {
+    min-height: 56px;
+    border-radius: 8px;
+    background: var(--dark-navy);
+    font-weight: 700;
+    color: white;
+    border: none;
+
+    &:hover {
+        background: linear-gradient(204deg, #FF6A3A 0%, #FF527B 100%);
+        box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.50);
+    }
+}
+
+.card_container {
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .text-container {
+        @include flexbox(column);
+        gap: 24px;
+        padding: 40px 24px;
+        @include font-style("Roboto", 16px, 400, 150%);
+        color: var(--dark-navy);
+    
+        h1 {
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 100%;
+        }
+
+
+        .custom-list {
+            list-style: none;
+            padding-left: 0;
+
+            li {
+                position: relative;
+                padding-left: 30px;  /* Make room for the icon */
+                margin-bottom: 10px; /* Space between items */
+        
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('assets/images/icon-success.svg');
+                    background-size: contain;
+                }
+            }
+        }
+
+        .email_input {
+            @include flexbox(column);
+            gap: 8px;
+            margin-top: 16px;
+
+            .container {
+                @include flexbox(row, space-between);
+            }
+
+            label, .container {
+                font-size: 12px;
+                font-weight: 700;
+            }
+
+            input {
+                font-size: 16px;
+                width: 100%;
+                padding: 16px 24px;
+                border-radius: 8px;
+                border: 1px solid var(--grey-25);
+
+                &::placeholder {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
+
+#success-message {
+    @include flexbox(column, center);
+    @include font-style("Roboto", 16px, 400, 150%);
+    padding: 40px 24px;
+    min-height: 100vh;
+
+    h1 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 24px;
+        line-height: 100%;
+    }
+
+    .icon {
+        margin-bottom: 42px;
+    }
+
+    .blue-btn {
+        margin-top: auto;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background: var(--pale-navy);
+        display: grid;
+        place-content: center;
+        height: 100vh;
+    }
+
+    .card_container {
+        @include flexbox(row, flex-start, stretch);
+        gap: 64px;
+        flex-direction: row-reverse;
+        background-color: white;
+        max-height: 641px;
+        max-width: 928px;
+        border-radius: 36px;
+        padding: 24px;
+
+        .text-container {
+            flex: 1;
+            justify-content: center;
+
+            h1 {
+                font-size: 56px;
+            }
+        }
+
+        picture {
+            flex: 1;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+    #success-message {
+        background-color: white;
+        max-height: 520px;
+        min-height: 0vh;
+        max-width: 504px;
+        padding: 64px;
+
+        border-radius: 36px;
+
+        .icon {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            margin-bottom: 24px;
+        }
+
+        p {
+            margin-bottom: 40px;
+        }
+    }
+}
