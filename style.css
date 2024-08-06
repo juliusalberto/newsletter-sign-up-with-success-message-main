@@ -105,9 +105,11 @@ input.alert {
 }
 .card_container .text-container .email_input input::-moz-placeholder {
   opacity: 0.5;
+  color: var(--dark-navy);
 }
 .card_container .text-container .email_input input::placeholder {
   opacity: 0.5;
+  color: var(--dark-navy);
 }
 
 #success-message {
